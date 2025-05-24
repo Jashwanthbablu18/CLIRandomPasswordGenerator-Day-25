@@ -1,0 +1,69 @@
+This is a  program  which was designed as part of my "30-Day Python Challenge." 
+
+For ExternalFile.py
+The provided code is a Python script for generating random passwords.
+1. Imports:
+   - import random: This imports Python's built-in random module, which is used to generate random numbers and selections.
+   - import string: This imports the string module, which provides access to common string constants like letters and digits.
+2. def generate_password(): This function defines a function named generate_password that takes two optional parameters:
+     - length: The desired length of the password, defaulting to 12 characters if not specified.
+     - use_special_chars: A boolean flag indicating whether to include special characters in the password, defaulting to True.
+3. Input Validation:
+   - if length < 6:: This checks if the specified length is less than 6.
+   - If the length is less than 6, the function returns a warning message indicating that the password should be at least 6 characters 
+     long.
+4. Character Set Construction:
+   - chars = string.ascii_letters + string.digits: This creates a string (chars) containing all uppercase and lowercase letters 
+     (string.ascii_letters) and digits (string.digits).
+   - if use_special_chars: chars += string.punctuation: If use_special_chars is True, special characters (string.punctuation) are added 
+     to the chars string.
+5. Password Generation:
+   - password = ''.join(random.sample(chars, length)): This line generates the password by randomly selecting a sample of unique 
+     characters from the chars string, with the size of the sample equal to the specified length. The random.sample function ensures 
+     that characters are not repeated, and ''.join(...) constructs the final password string by concatenating the selected characters.
+6. Return Statement:
+   - return password: The generated password is returned as the output of the function.
+
+
+For Day-25Code.py
+The provided code is a Python script for generating random passwords.
+1. from ExternalFile import generate_password:
+   this imports generate_password function from ExternalFile.py to generate password.
+2. main():
+   - The 'try' block tries to take length of the password as input.
+   - It also tries to take input to include any special chars or not, if 'y' then includes other than this won't include.
+   - And passes these length and special params into generate_password() function to generate password based on requirements.
+   - It manages any invalid length input by excepting with user friendly msg.
+3. if __name__ == "__main__":
+   This calls main() to start execution of program.
+
+
+What I've learnt:
+- Module: It is a python file containing python code(with '.py' extension) it consists of defined functions, classes and variables where
+  we can reuse them in another programs. eg: math, os, random... . We can create it by our own and use by importing them.
+- PIP: It stands for "Python Installer Package", which is used to install additional libraries, dependencies and packages that which 
+  aren't available in standard library. We can install by using command 'pip install <PACKAGE_NAME>
+- PyPI: It stands for "Python Package Index", This is a repository of python packages contributed by the community.So when we run 
+  `pip install` it pulls from this only.
+- So we know that we have Modules, Packages, Library and Framework looks similar but they've distinct meanings:
+   -> Module: A module is a single Python file (.py) that contains code — functions, variables, and classes — you can import and use. 
+      It is smallest unit of reusable code.
+   -> Package: A package is a collection of modules grouped together in a directory with an __init__.py file (can be empty). Allows for 
+      hierarchical structuring of code (sub-packages, etc.).
+   -> Library: A library is a collection of modules and/or packages that offer specific functionality. It’s a broader term — could be a 
+      single module or a full package with many modules.
+   -> Framework: A framework is a large, structured library or collection of libraries that provides a foundation and dictates how our 
+      code should be written. 
+- Advantages of Modules: 
+   1, Code Reusability
+   2, Better organization of code
+   3, Standard library access
+- Advantages of PIP:
+   1, Easy package installation
+   2, Dependency management
+   3, Uninstallation and upgrading
+- Advantages of PyPI:
+   1, It has massive library collection
+   2, Community contributions
+   3, Centeralized resource
+   4, Integration with PIP
